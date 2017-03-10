@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Welcome to {% endblock %}
+{% block content %}
+    <div id="Show Listing">
+        <h2>Listing {{ listing_id }}</h2>
+        <h3>{{ listing.name }}</h3>
+        <p>${{ listing.price }}</p>
+        <p>{{ listing.description }}</p>
+    </div>
+    <button type="button" class="btn btn-default"> <a href="{{ url_for('index') }}">Show All</a> </button>
+    <br>
+    <button type="button" class="btn btn-default"> <a href="{{ url_for('listing_edit', listing_id=listing.id) }}">Edit Listing</a>
+    </button><br>
+    <button type="button" class="btn btn-default"> <a href="{{ url_for('listing_delete', listing_id=listing.id) }}">Delete Listing</a></button>
+{% endblock %}
